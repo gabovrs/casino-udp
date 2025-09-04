@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 :root {
   color-scheme: light dark;
   --color-background: rgb(19, 19, 19);
   --color-background-light: rgb(39, 39, 39);
-  --color-primary: blue;
-  --color-primary-dark: darkblue;
+  --color-primary: #FFBF00;
+  --color-primary-dark: #E2A900;
+  --background-gradient: radial-gradient(ellipse 80% 80% at 50% -20%, #ffbf0030, rgba(255, 255, 255, 0));
+  --primary-gradient: linear-gradient(to bottom, #FFBF00 0%, #E2A900 100%);
 }
 
 * {
@@ -13,11 +18,21 @@
 }
 
 body {
-  background-color: var(--color-background);
-  font-family: sans-serif;
+  background: var(--background-gradient);
+  /* font-family: sans-serif; */
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .site-header {
@@ -41,8 +56,6 @@ body {
 }
 
 .nav-link {
-  text-decoration: none;
-  color: var(--color-text);
   font-weight: 500;
 }
 
@@ -55,6 +68,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 16px;
 }
 
 .hero {
@@ -63,7 +77,8 @@ body {
   align-items: center;
 }
 
-.hero h2 {
+.hero h1 {
+  color: var(--color-primary);
   font-size: 48px;
   margin-bottom: 8px;
 }
@@ -79,14 +94,17 @@ body {
   justify-content: center;
 }
 
-.button-primary {
-  background-color: var(--color-primary);
-  color: white;
+.button {
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 12px 24px;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
+}
+
+.button-primary {
+  background: var(--primary-gradient);
 }
 
 .button-primary:hover {
@@ -106,6 +124,71 @@ body {
   flex-direction: column;
   gap: 12px;
 }
+
+.info {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-header img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+.profile-transactions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-background-light);
+  overflow: hidden;
+}
+
+th {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
 
 input {
   padding: 12px;
