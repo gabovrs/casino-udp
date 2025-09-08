@@ -3,12 +3,13 @@
 
 :root {
   color-scheme: light dark;
-  --color-background: rgb(19, 19, 19);
-  --color-background-light: rgb(39, 39, 39);
+  --color-background: #0A0A0A;
+  --color-background-light: #141414;
   --color-primary: #FFBF00;
   --color-primary-dark: #E2A900;
-  --background-gradient: radial-gradient(ellipse 80% 80% at 50% -20%, #ffbf0030, rgba(255, 255, 255, 0));
+  --background-gradient: radial-gradient(ellipse 80% 80% at 50% -20%, #ffbf0017, #0A0A0A);
   --primary-gradient: linear-gradient(to bottom, #FFBF00 0%, #E2A900 100%);
+  /* --primary-gradient-dark: linear-gradient(to bottom, #E2A900 0%, #E2A900 100%); */
 }
 
 * {
@@ -19,7 +20,6 @@
 
 body {
   background: var(--background-gradient);
-  /* font-family: sans-serif; */
   font-family: 'Open Sans', sans-serif;
   display: flex;
   flex-direction: column;
@@ -36,11 +36,14 @@ a {
 }
 
 .site-header {
+  width: 100%;
+  position: fixed;
   padding-top: 24px;
   padding-bottom: 24px;
   padding-left: 32px;
   padding-right: 32px;
   border-bottom: 1px solid var(--color-background-light);
+  backdrop-filter: blur(10px);
 }
 
 .nav {
@@ -68,7 +71,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
+  padding: 128px 16px;
 }
 
 .hero {
@@ -88,10 +91,11 @@ a {
 }
 
 .hero-buttons {
-  margin-top: 16px;
-  list-style: none;
   display: flex;
   justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  list-style: none;
 }
 
 .button {
@@ -108,7 +112,16 @@ a {
 }
 
 .button-primary:hover {
-  background-color: var(--color-primary-dark);
+  background: var(--color-primary-dark);
+}
+
+.button-secondary {
+  background: var(--color-background-light);
+  color: white;
+}
+
+.button-secondary:hover {
+  background: var(--color-background);
 }
 
 .form-section {
@@ -161,18 +174,47 @@ a {
   height: 120px;
 }
 
-.profile-transactions {
+.profile-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
+.profile-games {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.roulette-section {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.roulette-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+
 table {
   width: 100%;
   border-collapse: collapse;
   background-color: var(--color-background-light);
   overflow: hidden;
+  border-radius: 8px;
 }
 
 th {
@@ -199,6 +241,19 @@ input {
 }
 
 input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+select {
+  padding: 12px;
+  border: 1px solid var(--color-background-light);
+  border-radius: 4px;
+  background-color: var(--color-background);
+  color: white;
+}
+
+select:focus {
   outline: none;
   border-color: var(--color-primary);
 }

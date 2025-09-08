@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesa de Ruleta - Lucky UDP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <h2><a href="index.html">Lucky UDP</a></h2>
+      <ul class="nav-list">
+        <li><a href="register.html" class="nav-link">Registrarse</a></li>
+        <li><a href="login.html" class="nav-link">Acceder</a></li>
+        <li><a href="app-info.html" class="nav-link">Información de la App</a></li>
+        <li><a href="casino-info.html" class="nav-link">Información del Casino</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <section class="roulette-section">
+      <div class="roulette-container">
+        <h2>Saldo disponible: $10.000</h2>
+        <p>Recibiendo apuestas</p>
+        <img src="https://www.casino.com/blog/wp-content/uploads/sites/2/2021/09/European-Wheel.png" width="300">
+        <form class="form-register">
+          <label for="tipo-apuesta">Tipo de apuesta:</label>
+          <select name="tipo-apuesta" required>
+            <option value="rojo">Rojo</option>
+            <option value="negro">Negro</option>
+            <option value="par">Par</option>
+            <option value="impar">Impar</option>
+            <option value="numero">Número específico</option>
+          </select>
+          <label for="numero-apuesta">Número (0-36):</label>
+          <input type="number" name="numero-apuesta" min="0" max="36" placeholder="Número (0-36)">
+          <label for="monto-apuesta">Monto a apostar:</label>
+          <input type="number" name="monto-apuesta" min="1" placeholder="Monto" required>
+          <button type="submit" class="button button-primary">Apostar</button>
+        </form>
+        <a href="profile.html" class="nav-link">Volver a perfil</a>
+      </div>
+      <div class="roulette-container">
+        <strong>Últimos 5 números ganadores:</strong>
+        <table>
+          <thead>
+            <tr>
+              <th>Número</th>
+              <th>Color</th>
+            </tr>
+          </thead>
+          <tbody id="ultimos-ganadores">
+            <tr>
+              <td>32</td>
+              <td style='color:rojo'>rojo</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td style='color:negro'>negro</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td style='color:rojo'>rojo</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td style='color:verde'>verde</td>
+            </tr>
+            <tr>
+              <td>26</td>
+              <td style='color:negro'>negro</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="roulette-container">
+        <strong>Últimas 5 apuestas realizadas:</strong>
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Monto</th>
+              <th>Resultado</th>
+              <th>Variación de saldo</th>
+            </tr>
+          </thead>
+          <tbody id="ultimas-apuestas">
+            <tr>
+              <td>Rojo</td>
+              <td>$50.000</td>
+              <td>Ganaste</td>
+              <td>+$50.000</td>
+            </tr>
+            <tr>
+              <td>Negro</td>
+              <td>$30.000</td>
+              <td>Perdiste</td>
+              <td>-$30.000</td>
+            </tr>
+            <tr>
+              <td>Par</td>
+              <td>$20.000</td>
+              <td>Ganaste</td>
+              <td>+$20.000</td>
+            </tr>
+            <tr>
+              <td>Impar</td>
+              <td>$10.000</td>
+              <td>Perdiste</td>
+              <td>-$10.000</td>
+            </tr>
+            <tr>
+              <td>Número</td>
+              <td>$5.000</td>
+              <td>Ganaste</td>
+              <td>+$5.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 casino Lucky UDP. Todos los derechos reservados.</p>
+  </footer>
+</body>
+
+</html>
